@@ -11,7 +11,16 @@ my $create_intermediary_files = exists $opts{i};
 my $verbose = exists $opts{v};
 
 my $license_result = Nier::process_file($input_file, $create_intermediary_files, $verbose);
-print "$input_file;$license_result\n";
+#print "$input_file;$license_result\n";
+my $result_array = split('\;', $license_result);
+print "inputfile: $input_file\n";
+print "licenses: $result_array[0]\n";
+print "number of licenses matched: $result_array[1]\n";
+print "number of sentences matched: $result_array[2]\n";
+print "number of sentences ignored: $result_array[3]\n";
+print "number of sentences not matched: $result_array[4]\n";
+print "number of sentences unknown: $result_array[5]\n";
+print "senttok: $result_array[6]\n";
 exit 0;
 
 sub parse_cmdline_parameters {
