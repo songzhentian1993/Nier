@@ -12,7 +12,7 @@ my $verbose = exists $opts{v};
 
 my $license_result = Nier::process_file($input_file, $create_intermediary_files, $verbose);
 #print "$input_file;$license_result\n";
-my $result_array = split('\;', $license_result);
+my @result_array = split('\;', $license_result);
 print "inputfile: $input_file\n";
 print "licenses: $result_array[0]\n";
 print "number of licenses matched: $result_array[1]\n";
