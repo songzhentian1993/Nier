@@ -80,8 +80,9 @@ sub execute_command {
 	
 	if ($command[0] eq "comments") {
 		my $result = "";
+		my $input_file_comments = $self->{input_file}.".comments";
 		system(@command);
-		open my $fh, $self->{input_file}."comments" or die "can't open file [$self->{input_file}]: $!";
+		open my $fh, $input_file_comments or die "can't open file [$input_file_comments]: $!";
 		
 		while (my $line = <$fh>) {
 			chomp $line;
