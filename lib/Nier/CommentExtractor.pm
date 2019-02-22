@@ -66,8 +66,7 @@ sub create_head_cmd {
 
 sub execute_command {
     my (@command) = @_;
-    # make sure we have more than one element in the array
-    #    otherwise system will use the shell to do the execution
+
     die "command (@command) seems to be missing parameters" unless (scalar(@command) > 1);
 
     my ($stdout, $error, $success, $status) = capture_exec( @command );

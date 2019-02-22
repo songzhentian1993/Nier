@@ -21,7 +21,6 @@ if (scalar(@result_array) == 7) {
 	print "number of sentences not matched: $result_array[4]\n";
 	print "number of sentences unknown: $result_array[5]\n";
 	print "senttok: $result_array[6]\n";
-	print "songzhentian\n";
 } else {
 	print "$input_file;$license_result\n";
 }
