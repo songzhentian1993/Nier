@@ -78,13 +78,13 @@ sub execute_command {
 		return $stdout;
 	}
 	
-	if ($command[0] = "comments") {
+	if ($command[0] == "comments") {
 		system(@command);
 		open my $fh, $self->{input_file}."comments" or die "can't open file [$self->{input_file}]: $!";
 		
 		while (my $line = <$fh>) {
 			chomp $line;
-			$result .= $line;
+			my $result .= $line;
 		}
 		
 		close $fh;
