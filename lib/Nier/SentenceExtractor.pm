@@ -168,16 +168,6 @@ sub split_text {
             next;
         }
         if ($punctuation eq '.') {
-            # we have a bunch of alternatives
-            # for the time being just consider a new sentence
-
-            # TODO
-            # simple heuristic... let us check that the next words are not the beginning of a sentence
-            # in our library
-            # END TODO
-
-            # is the last word an abbreviation? for this the period has to follow the word.
-            # this expression might have to be updated to take care of special characters in names. :(
             if ($sentence_match =~ /(.?)([^[:punct:]\s]+)$/) {
                 my $before = $1;
                 my $last_word = $2;

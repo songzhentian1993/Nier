@@ -163,28 +163,7 @@ sub match_license {
     print STDERR "senttok after matching rules [$senttok]\n" if $self->{verbose};
     print STDERR "result after matching rules [" . join(',', @{$self->{result}}) . "]\n" if $self->{verbose};
 
-#    # let us remove allrights
-#    my $only_all_right = 1;
-#    for my $i (0.. scalar(@license_sentence_names)-1){
-#        if ($license_sentence_names[$i] eq 'AllRights') {
-#            $license_sentence_names[$i] = '';
-#        } else {
-#            $only_all_right = 0;
-#        }
-#    }
-
-    # output result
     if (scalar(@{$self->{result}}) > 0) {
-        # at this point we have matched
-
-        # let us clean up the rules... let us print the matched rules, and the
-#    if (grep(/GPL/, @{$self->{result}})) {
-#        print "GPL...\n";
-#        foreach my $r ($NON_CRITICAL_RULES{GPL}) {
-#            $senttok =~ s/(,|^)$r(,|$)/$1$2/g;
-#        }
-#    }
-
         foreach my $rule (@Nier::LicenseRules::GENERAL_NON_CRITICAL) {
             while ($senttok =~ s/,$rule,/,-1,/) {
                 ;
@@ -207,10 +186,6 @@ sub match_license {
 
 sub generate_license_result {
     my ($self, $senttok) = @_;
-
-#   $senttok =~ s/AllRights(,?)/$1/g;
-#   $senttok =~ s/UNKNOWN,/,/g;
-#   $senttok =~ s/,+/,/g;
 
     my @sections = split ',', $senttok;
     die 'assertion 1' if $sections[0] ne '';
