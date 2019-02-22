@@ -49,6 +49,7 @@ sub execute {
     @license_sentence_names = split ',', $senttok;
 
     # first remove the extrict part from it
+	#Perl evaluates any string to 0 if is not a number
     my $match = 0;
     for (my $i = 0; $i <= $#license_sentence_names; $i++) {
         if ($license_sentence_names[$i] == 0 &&
