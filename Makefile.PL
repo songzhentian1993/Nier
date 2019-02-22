@@ -9,9 +9,7 @@ WriteMakefile(
     ABSTRACT_FROM => 'lib/Nier.pm',
     LICENSE => 'gpl_2',
     AUTHOR => [
-        'Daniel M. German <dmg@uvic.ca>',
-        'Yuki Manabe <y-manabe@ist.osaka-u.ac.jp>',
-        'René Scheibe <rene.scheibe@gmail.com>',
+        'songzhentian',
     ],
     EXE_FILES => ['bin/nier'],
     CONFIGURE_REQUIRES => {
@@ -39,7 +37,7 @@ WriteMakefile(
     META_MERGE => {
         resources => {
             homepage => 'http://nier.turingmachine.org/',
-            repository => 'https://github.com/dmgerman/nier',
+            repository => 'https://github.com/songzhentian1993/nier',
             license => 'http://www.gnu.org/licenses/gpl-2.0.html',
        },
     },

@@ -243,43 +243,4 @@ sub load_abbreviations {
 
 __END__
 
-=head1 NAME
 
-Nier::SentenceExtractor
-
-=head1 DESCRIPTION
-
-Breaks comments into sentences.
-
-=head1 NOTES
-
-This list of abbreviations was extracted from SCOWL (Spell Checker Oriented Word Lists)
-by Kevin Atkinson (kevina@gnu.org) version 2015.04.24.
-
-Specifically it was created from scowl-2015.04.24.tar.gz. by running:
-
-    cat *abbrev* | sort -u > abbreviations.dict
-
-It also contains some additions by D.M German.
-
-See Copyright.SCOWL for license.
-
-=head1 COPYRIGHT AND LICENSE
-
-Author: Paul Clough
-With modifications by Daniel M German and Y. Manabe,
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as
-published by the Free Software Foundation; either version 2 of the
-License, or (at your option) any later version.
-
-This patch is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-=cut

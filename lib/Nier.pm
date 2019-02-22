@@ -66,39 +66,4 @@ sub create_intermediary_file {
 
 __END__
 
-=head1 NAME
 
-Nier - source file license identification tool
-
-=head1 SYNOPSIS
-
-    use Nier;
-
-    my $input_file = 'some/path/file_of_interest';
-    my $create_intermediary_files = 0;
-    my $verbose = 0;
-
-    my $license_result = Nier::process_file($input_file, $create_intermediary_files, $verbose);
-
-=head1 DESCRIPTION
-
-Scans a source file and returns the found licenses.
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright (C) 2009-2014,2017  Yuki Manabe and Daniel M. German
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as
-published by the Free Software Foundation; either version 2 of the
-License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-=cut
