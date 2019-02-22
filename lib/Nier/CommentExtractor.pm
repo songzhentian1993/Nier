@@ -23,10 +23,10 @@ sub execute {
     my ($self) = @_;
 
     my @command = $self->determine_comments_command();
-    my $comments = execute_command(@command);
+    my $comments = $self->execute_command(@command);
     if ($command[0] =~ /^comments/ && length($comments) == 0) {
         @command = create_head_cmd($self->{input_file}, 700);
-        $comments = execute_command(@command);
+        $comments = $self->execute_command(@command);
     }
 
     return $comments;
