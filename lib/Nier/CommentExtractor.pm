@@ -96,7 +96,7 @@ sub execute_command {
 	my $commandSt = join(' ', @command);
 	die "execution of program [$commandSt] failed: status [$status], error [$error]" if ($status != 0);
 	print "command--------$command[0]\n";
-	print "input_file------$self->{input_file\n}\n";
+	print "input_file------$self->{input_file}\n";
 	return $stdout;
 
 }
