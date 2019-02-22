@@ -69,7 +69,7 @@ sub execute_command {
 
     die "command (@command) seems to be missing parameters" unless (scalar(@command) > 1);
 	
-	if ($command[0] == "head") {
+	if ($command[0] eq "head") {
 	    my ($stdout, $error, $success, $status) = capture_exec( @command );
 
 		my $commandSt = join(' ', @command);
@@ -78,7 +78,7 @@ sub execute_command {
 		return $stdout;
 	}
 	
-	if ($command[0] == "comments") {
+	if ($command[0] eq "comments") {
 		my $result = "";
 		system(@command);
 		open my $fh, $self->{input_file}."comments" or die "can't open file [$self->{input_file}]: $!";
