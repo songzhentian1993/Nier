@@ -215,7 +215,6 @@ sub generate_license_result {
     } else {
         $license_result = join ',', @{$self->{result}};
     }
-    # ok, so now, what I want to output is:
     # licenses; number of licenses matched;number of sentences matched; number of sentences ignored;number of sentences not matched;number of sentences unknown
     $license_result .= ";$self->{count_matches};$license_lines;$ignored_lines;$unmatched_lines;$unknown_lines;$senttok";
 
