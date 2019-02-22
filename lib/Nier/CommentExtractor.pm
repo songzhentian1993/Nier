@@ -65,16 +65,33 @@ sub create_head_cmd {
 }
 
 sub execute_command {
-    my (@command) = @_;
+    my ($self, @command) = @_;
 
     die "command (@command) seems to be missing parameters" unless (scalar(@command) > 1);
+	
+	if ($command[0] == "head") {
+	    my ($stdout, $error, $success, $status) = capture_exec( @command );
 
-    my ($stdout, $error, $success, $status) = capture_exec( @command );
+		my $commandSt = join(' ', @command);
+		die "execution of program [$commandSt] failed: status [$status], error [$error]" if ($status != 0);
 
-    my $commandSt = join(' ', @command);
-    die "execution of program [$commandSt] failed: status [$status], error [$error]" if ($status != 0);
+		return $stdout;
+	}
+	
+	if ($command[0] = "comments") {
+		system(@command);
+		open my $fh, $self->{input_file}."comments" or die "can't open file [$self->{input_file}]: $!";
+		
+		while (my $line = <$fh>) {
+			chomp $line;
+			$result .= $line;
+		}
+		
+		close $fh;
+		return $result;
+	}
 
-    return $stdout;
+
 }
 
 1;
