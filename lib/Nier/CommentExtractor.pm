@@ -85,7 +85,7 @@ sub execute_command {
 		open my $fh, $input_file_comments or die "can't open file [$input_file_comments]: $!";
 		
 		while (my $line = <$fh>) {
-			chomp $line;
+			#chomp $line;
 			$result .= $line;
 		}
 		
@@ -93,13 +93,6 @@ sub execute_command {
 		return $result;
 	}
 	
-	# my ($stdout, $error, $success, $status) = capture_exec( @command );
-	# my $commandSt = join(' ', @command);
-	# die "execution of program [$commandSt] failed: status [$status], error [$error]" if ($status != 0);
-	# print "command--------$command[0]\n";
-	# print "input_file------$self->{input_file}\n";
-	# return $stdout;
-
 }
 
 1;
