@@ -79,7 +79,7 @@ sub execute_command {
 	}
 	
 	if ($command[0] == "comments") {
-		my result = "";
+		my $result = "";
 		system(@command);
 		open my $fh, $self->{input_file}."comments" or die "can't open file [$self->{input_file}]: $!";
 		
