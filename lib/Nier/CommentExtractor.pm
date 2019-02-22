@@ -69,35 +69,35 @@ sub execute_command {
 
     die "command (@command) seems to be missing parameters" unless (scalar(@command) > 1);
 	
-	# if ($command[0] eq "head") {
-	    # my ($stdout, $error, $success, $status) = capture_exec( @command );
+	if ($command[0] eq "head") {
+	    my ($stdout, $error, $success, $status) = capture_exec( @command );
 
-		# my $commandSt = join(' ', @command);
-		# die "execution of program [$commandSt] failed: status [$status], error [$error]" if ($status != 0);
+		my $commandSt = join(' ', @command);
+		die "execution of program [$commandSt] failed: status [$status], error [$error]" if ($status != 0);
 
-		# return $stdout;
-	# }
+		return $stdout;
+	}
 	
-	# if ($command[0] eq "comments") {
-		# my $result = "";
-		# system(@command);
-		# open my $fh, $self->{input_file}."comments" or die "can't open file [$self->{input_file}]: $!";
+	if ($command[0] eq "comments") {
+		my $result = "";
+		system(@command);
+		open my $fh, $self->{input_file}."comments" or die "can't open file [$self->{input_file}]: $!";
 		
-		# while (my $line = <$fh>) {
-			# chomp $line;
-			# $result .= $line;
-		# }
+		while (my $line = <$fh>) {
+			chomp $line;
+			$result .= $line;
+		}
 		
-		# close $fh;
-		# return $result;
-	# }
+		close $fh;
+		return $result;
+	}
 	
-	my ($stdout, $error, $success, $status) = capture_exec( @command );
-	my $commandSt = join(' ', @command);
-	die "execution of program [$commandSt] failed: status [$status], error [$error]" if ($status != 0);
-	print "command--------$command[0]\n";
-	print "input_file------$self->{input_file}\n";
-	return $stdout;
+	# my ($stdout, $error, $success, $status) = capture_exec( @command );
+	# my $commandSt = join(' ', @command);
+	# die "execution of program [$commandSt] failed: status [$status], error [$error]" if ($status != 0);
+	# print "command--------$command[0]\n";
+	# print "input_file------$self->{input_file}\n";
+	# return $stdout;
 
 }
 
