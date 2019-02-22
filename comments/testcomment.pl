@@ -2,7 +2,7 @@ use IO::CaptureOutput qw/capture_exec/;
 
 @command1 = ("comments", "-c1", "main.cpp");
 
-#($stdout, $error, $success, $status) = capture_exec( @command );
+#($stdout, $error, $success, $status) = capture_exec( @command1 );
 #print "command1--------";
 #print "$stdout\n";
 #print "$error\n";
@@ -10,7 +10,7 @@ use IO::CaptureOutput qw/capture_exec/;
 #print "$status\n";
 
 @command2 = ("head", "-400", "main.cpp");
-($stdout, $error, $success, $status) = capture_exec( @command );
+($stdout, $error, $success, $status) = capture_exec( @command2 );
 print "command2--------";
 print "$stdout\n";
 print "$error\n";
