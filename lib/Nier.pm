@@ -42,7 +42,7 @@ sub process_file {
     my $license_result = Nier::LicenseMatcher->new(%parameters_step5)->execute();
 
     if ($create_intermediary_files) {
-        create_intermediary_file($input_file, 'comments',  $comments);
+        create_intermediary_file($input_file, 'comments_1',  $comments);
         create_intermediary_file($input_file, 'sentences', join("\n", @$sentences_ref));
         create_intermediary_file($input_file, 'goodsent',  join("\n", @$good_sentences_ref));
         create_intermediary_file($input_file, 'badsent',   join("\n", @$bad_sentences_ref));
