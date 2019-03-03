@@ -1,9 +1,9 @@
-In order to use Ninka you must install the comments extractor found
+In order to use Nier you must install the comments extractor found
 in this directory.
 
-If Ninka does not find it in the executable path, it will use the
+If Nier does not find it in the executable path, it will use the
 first 400 lines from source code, and is likely to reduce the precision
-of Ninka.
+of Nier.
 
 Code and Comments separator version 1.1 written by songzhentian
 . Unfortunately the original URL does not exist any
